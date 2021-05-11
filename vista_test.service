@@ -1,0 +1,13 @@
+[Unit]
+Description=Temperature Service
+After=multi-user.target
+
+[Service]
+WorkingDirectory=/home/vova/Pycharm_project/vista_test
+User=vova
+Type=idle
+ExecStart=/home/vova/Pycharm_project/vista_test/venv/bin/python /home/vova/Pycharm_project/vista_test/manage.py &> /dev/null
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
