@@ -1,0 +1,35 @@
+>>> import requests
+>>> from requests.auth import HTTPBasicAuth
+>>> url = 'http://127.0.0.1:5000'
+>>>
+>>>
+>>> # Регистрация пользователя
+>>> user = requests.post(f'{url}/register/', data={'email': 'vovavoronin1999@gmail.com', 'password':'123456'})
+>>>
+>>>
+>>> # Создаем данные для авторизации
+>>> auth = HTTPBasicAuth('vovavoronin1999@gmail.com', '123456')
+>>>
+>>>
+>>> # Получение данных о пользователе
+>>> user = requests.get(f'{url}/register/', auth=auth)
+>>> user
+<Response [200]>
+>>> user.json()
+{'email': 'vovavoronin1999@gmail.com'}
+>>>
+>>>
+>>> # Меняем пароль пользователя на 12345 (также в auth надо поменять пароль)
+>>> user = requests.put(f'{url}/register/',data={'password':'12345'}, auth=auth)
+>>> user
+<Response [200]>
+>>> user.json()
+{'status': True}
+>>>
+>>>
+>>> # удаление пользователя
+>>> user = requests.delete(f'{url}/register/', auth=auth)
+>>> user
+<Response [200]>
+>>> user.json()
+{'status': True}
