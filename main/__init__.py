@@ -9,7 +9,7 @@ auth = HTTPBasicAuth()
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['SECRET_KEY'] = b'my_super_secret_key'
-app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{config.get("login")}:{config.get("password")}@{config.get("host")}:{config.get("port")}/{config.get("database_name")}?charset=utf8mb4'
+app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{config["database"].get("login")}:{config["database"].get("password")}@{config["database"].get("host")}:{config["database"].get("port")}/{config["database"].get("database_name")}?charset=utf8mb4'
 
 db = SQLAlchemy(app)
 

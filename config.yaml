@@ -1,6 +1,6 @@
 database:
-  login: 'vovavoronin'
-  password: 'vovavoronin'
-  host: 'localhost'
+  login: 'user'
+  password: 'supersicretpasswd'
+  host: '127.0.0.1'
   port: 3306
   database_name: 'vista'

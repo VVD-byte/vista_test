@@ -44,7 +44,7 @@ class RegisterNewUser(MethodView):
     def put(self):
         user = auth.current_user()
         try:
-            if request.form.get('email', None) is not None:
+            if request.form.get('password', None) is not None:
                 user.password = user.get_hash_sha256(request.form.get('password', None))
                 db.session.commit()
                 return {'status': True}
